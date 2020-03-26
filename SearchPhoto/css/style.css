@@ -1,0 +1,15 @@
+#searchResult {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1rem
+}
+ #size {
+    width:5%;
+}
+
+#largeImage {
+    align-content: center;     
+    display: grid;
+    width: fit-content;
+    background-color: black;      
+}
