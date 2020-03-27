@@ -1,6 +1,5 @@
-// import module is not working in my browser
-import { DisplayUI } from './thumbnail.js';
 
+import { DisplayUI } from './thumbnail.js';
 
 document.querySelector('button').addEventListener('click' , async () => {
     
@@ -44,7 +43,6 @@ async function searchAndDisplay(searchText,size)
 }
 
 
- 
 //Set the Flickr API url
 function setFlickerApiUrl(searchText,pageSize)
 {
@@ -58,34 +56,3 @@ function setFlickerApiUrl(searchText,pageSize)
 }
 
 //Display UI.
-async function DisplayUI(data)
-{
-    
-    data.photo.forEach(img => {
-       
-        let imgElement=document.createElement('img');       
-
-        imgElement.setAttribute('src',getImgUrl(img,'q'));
-
-        imgElement.addEventListener('click', async () =>
-        {            
-             showOriginal(img);
-        });
-
-        document.querySelector('#searchResult').appendChild(imgElement);
-      });
-}
-
-function showOriginal(imageObject)
-{
-
-    document.querySelector('#largeImage').innerHTML='';
-    
-    let imgElement=document.createElement('img');       
-
-    imgElement.setAttribute('src',getImgUrl(imageObject,'z'));
-
-    document.querySelector('#largeImage').appendChild(imgElement);
-
-    
-}

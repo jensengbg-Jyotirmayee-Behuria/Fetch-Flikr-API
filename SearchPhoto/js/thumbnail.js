@@ -1,4 +1,4 @@
-function DisplayUI(data)
+export async function DisplayUI(data)
 {
      
     data.photo.forEach(img => {
@@ -9,11 +9,25 @@ function DisplayUI(data)
 
         imgElement.addEventListener('click', () =>
         {
-
+            showOriginal(img);
         });
 
         document.querySelector('#searchResult').appendChild(imgElement);
       });
+}
+
+function showOriginal(imageObject)
+{
+
+    document.querySelector('#largeImage').innerHTML='';
+    
+    let imgElement=document.createElement('img');       
+
+    imgElement.setAttribute('src',getImgUrl(imageObject,'z'));
+
+    document.querySelector('#largeImage').appendChild(imgElement);
+
+    
 }
 
 function getImgUrl(imageObject,size)
