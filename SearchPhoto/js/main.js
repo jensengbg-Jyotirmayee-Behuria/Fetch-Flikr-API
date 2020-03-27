@@ -1,5 +1,5 @@
 // import module is not working in my browser
-//import { DisplayUI } from './thumbnail.js';
+import { DisplayUI } from './thumbnail.js';
 
 
 document.querySelector('button').addEventListener('click' , async () => {
