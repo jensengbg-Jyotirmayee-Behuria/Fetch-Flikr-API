@@ -1,15 +1,50 @@
-#searchResult {
-    display: grid;
+*{
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+     width: 100vw;
+     height: 100vh;
+   } 
+ .wrapper {
+   max-width: 1000px;
+   margin: 0 auto;
+   display: grid;
+   /* grid-template-columns: repeat(4, 1fr); */
+   grid-auto-rows: auto;
+   grid-template-areas: "header"
+                          "main"
+                          
+                          
+   } 
+   .wrapper header {
+       margin: 0px;
+       padding: 1rem;
+   }
+   
+   /* .main {
+    grid-area: main;
+    align-items: center;
+    justify-content: center; }*/
+      
+   
+ #searchResult {
+     width: 230px;
+     padding: 5px;
+     filter: grayscale(100%);
+     transition: 1s;
+     margin: 70px;
+     display: grid; 
     grid-template-columns: repeat(4,1fr);
-    gap:1rem
+    gap:1rem;
 }
  #size {
-    width:5%;
+    width:15%;
 }
 
 #largeImage {
     align-content: center;     
     display: grid;
     width: fit-content;
-    background-color: black;      
+      
 }
