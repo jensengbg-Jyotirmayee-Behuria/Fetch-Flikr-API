@@ -1,33 +1,29 @@
-export async function DisplayUI(data)
+ 
+const lightBoxContainer = document.querySelector(".lightBoxContainer");
+const lightBoxImage = document.querySelector(".originalImage");
+
+export  async function DisplayUI(data)
 {
-     
+  //clear the result
+  let searchResultContainer = document.getElementById("searchResult");
+  searchResultContainer.innerHTML = '';
+    
     data.photo.forEach(img => {
-       
-        let imgElement=document.createElement('img');       
-
-        imgElement.setAttribute('src',getImgUrl(img,'q'));
-
-        imgElement.addEventListener('click', () =>
-        {
-            showOriginal(img);
-        });
-
-        document.querySelector('#searchResult').appendChild(imgElement);
+               
+      let divElem = document.createElement('div')                
+      let imgElement=document.createElement('img');
+      imgElement.setAttribute('src',getImgUrl(img,'q'));
+      imgElement.addEventListener('click', () =>
+      {
+          showOriginal(img);
       });
+      divElem.appendChild(imgElement); 
+      searchResult.appendChild(divElem);      
+  });
+   
 }
-
-function showOriginal(imageObject)
-{
-
-    document.querySelector('#largeImage').innerHTML='';
-    
-    let imgElement=document.createElement('img');       
-
-    imgElement.setAttribute('src',getImgUrl(imageObject,'z'));
-
-    document.querySelector('#largeImage').appendChild(imgElement);
-
-    
+export function openLightBox(){   
+  lightBoxContainer.classList.toggle("openimage");
 }
 
 function getImgUrl(imageObject,size)
@@ -36,3 +32,19 @@ function getImgUrl(imageObject,size)
    
   return imgUrl;
 }
+
+//Show Original from the image object
+function showOriginal(imageObject)
+{
+  
+  //Get the image URL with different size and set with SRC. Or c
+  lightBoxImage.src = getImgUrl(imageObject,'z');
+  lightBoxContainer.classList.toggle("openimage");     
+    
+}
+lightBoxContainer.addEventListener("click", function(event){
+  
+  if(event.target !== lightBoxImage){
+    openLightBox();
+  }
+})
