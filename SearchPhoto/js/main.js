@@ -1,4 +1,4 @@
-
+// import module is not working in my browser
 import { DisplayUI } from './thumbnail.js';
 
 document.querySelector('button').addEventListener('click' , async () => {
@@ -18,8 +18,7 @@ document.querySelector('button').addEventListener('click' , async () => {
 //Fetch from Flickr and Display
 async function searchAndDisplay(searchText,size)
 {    
-    document.querySelector('#searchResult').innerHTML='';
-    document.querySelector('#largeImage').innerHTML='';
+    document.querySelector('#searchResult').innerHTML='';     
     //Set the API Url
     var apiUrl=setFlickerApiUrl(searchText,size);          
    
@@ -33,16 +32,7 @@ async function searchAndDisplay(searchText,size)
              
     });     
 }
-
-//Set the Image URL based on image object found from Flikr
- function getImgUrl(imageObject,size)
-{
-    let imgUrl= `https://farm${imageObject.farm}.staticflickr.com/${imageObject.server}/${imageObject.id}_${imageObject.secret}_${size}.jpg`
-   
-     return imgUrl;
-}
-
-
+ 
 //Set the Flickr API url
 function setFlickerApiUrl(searchText,pageSize)
 {
@@ -54,5 +44,5 @@ function setFlickerApiUrl(searchText,pageSize)
     console.log(flickrApiUrl);
     return flickrApiUrl;
 }
+ 
 
-//Display UI.
