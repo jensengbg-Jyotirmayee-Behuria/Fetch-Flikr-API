@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href='css/style.css'/>
   <title>Flickr Image Search</title>
 </head>
-
 <body>
-
+<script type="module" src="js/main.js"></script>  
+<section class="wrapper">
+    <section class="header">
+        <h1>My Flickr Gallery</h1>
 <script type="module" src="js/main.js"></script>  
     <!--Search input section-->
 <section class = "searchField">
@@ -16,14 +17,12 @@
     <input type="text" id="size" >
     <button id = "search">Search</button>            
 </section> 
-
-
-<!--Flikr API result will be display in this section-->
-<div class = "searchResult" >
+</section>
+<!-- <section class="main"> -->
+<main class = "searchResult" >
     <div class = "searchResultSection" id = "searchResult"> 
-     </div> 
-</div>
-
+    </div> 
+</main>
 <!--Show original image using lightbox -->
 <div class = "lightBoxContainer">
     <div class = "lightBoxContent">
@@ -31,5 +30,7 @@
         <img src ="" class = "originalImage" alt="" >
     </div>   
 </div>
+<footer class = "footer"></footer>
+</section> <!--End of wrapper section  -->
 </body>
 </html>
